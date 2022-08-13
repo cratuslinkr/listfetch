@@ -11,7 +11,7 @@ app.post("/", async(req,res) => {
   var body = req.body;
   var data = [];
   if(!Array.isArray(body))return res.json({ message: "Body must be an array" });
-  body.forEach((e) => {
+  body.forEach(async (e) => {
   data.push((await axios(e)).data);
   });
   res.json(data);
