@@ -8,7 +8,7 @@ app.use(cors());
 const axios = require('axios');
 app.post("/", async(req,res) => {
   try {
-  var body = req.body;
+  var body = JSON.parse(req.body);
   var data = [];
   if(!Array.isArray(body))return res.json({ message: "Body must be an array" });
   body.forEach(async (e) => {
