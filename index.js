@@ -11,7 +11,8 @@ app.post("/", async(req,res) => {
   var body = JSON.stringify(req.body);
   var data = [];
   for(i in body){
-  data.push((await axios(body[i])).data);
+   var value = (await axios(body[i])).data;
+  data.push(value);
   };
   res.json(data);
   }catch(e) {
