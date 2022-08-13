@@ -10,7 +10,7 @@ app.post("/", async(req,res) => {
   try {
   var body = JSON.stringify(req.body);
   var data = [];
-  for(i in body){
+  for(i of body){
    var value = (await axios(body[i])).data;
   data.push(value);
   };
