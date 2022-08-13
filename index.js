@@ -8,7 +8,7 @@ app.use(cors());
 const axios = require('axios');
 app.post("/", async(req,res) => {
   try {
-  var body = JSON.parse(req.body);
+  var body = JSON.stringify(req.body);
   var data = [];
   for(i in body){
   data.push((await axios(body[i])).data);
